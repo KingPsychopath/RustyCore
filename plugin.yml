@@ -1,0 +1,5 @@
+name: RustyCore
+version: 1.0
+main: me.rusty.rustycore.Core
+author: RustyDesigns
+softdepend: [HolographicDisplays, ProtocolLib, TitleAPI]
