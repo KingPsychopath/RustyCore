@@ -1,5 +1,6 @@
 package me.rusty.rustycore.hanlders;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,6 +15,8 @@ public class ChatHandler implements Listener {
 		Player player = (Player) event.getPlayer();
 		
 		if (PermissionHandler.ranks.get(player.getUniqueId()).equals("Mod")) {
+			
+			Bukkit.broadcastMessage(PermissionHandler.ranks+"; "+PermissionHandler.ranks.size());
 			
 			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.YELLOW + "MOD"
 			+ ChatColor.DARK_GRAY + ":" + ChatColor.GRAY + event.getMessage());
