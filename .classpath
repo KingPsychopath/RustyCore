@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Server/plugins/ProtocolLib.jar"/>
-	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Server/plugins/TitleAPI.jar"/>
-	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Server/plugins/HolographicDisplays.jar"/>
-	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Server/spigot-1.8.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Spencer/ProtocolLib.jar"/>
+	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Spencer/TitleAPI.jar"/>
+	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Spencer/HolographicDisplays.jar"/>
+	<classpathentry kind="lib" path="/Users/Spencer/Desktop/Spencer/craftbukkit_server.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
