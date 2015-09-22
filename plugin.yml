@@ -1,5 +1,44 @@
-name: RustyCore
-version: 1.0
-main: me.rusty.rustycore.Core
-author: RustyDesigns
-softdepend: [HolographicDisplays, ProtocolLib, TitleAPI]
+ name: RustyCore
+ version: 1
+ description: RustyCraft's Core Plugin
+ author: RustyDesigns
+ softdepend: []
+ 
+ main: me.rusty.rustycore.Core
+ 
+ commands:
+   help:
+     description: Displays the help message!
+     usage: Syntax error! Simply type /command
+   spawn:
+     description: Teleports you to spawn!
+     usage: Syntax error! Simply type /command
+   gm:
+     description: Gamemode!
+     usage: Syntax error! Simply type /command
+   weather:
+     description: Weather!
+     usage: Syntax error! Simply type /command
+   time:
+     description: Time!
+     usage: Syntax error! Simply type /command
+   ci:
+     description: Clear!
+     usage: Syntax error! Simply type /command
+   tp:
+     description: TP!
+     usage: Syntax error! Simply type /command
+   kit:
+     description: Kit!
+     usage: Syntax error! Simply type /command
+   ?:
+     description: Plugins!
+     usage: Syntax error! Simply type /command
+   pl:
+     description: Plugins!
+     usage: Syntax error! Simply type /command
+   plugins:
+     description: Plugins!
+     usage: Syntax error! Simply type /command
+
+

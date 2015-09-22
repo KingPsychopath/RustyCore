@@ -5,7 +5,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockIgniteEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
 public class Protection implements Listener {
@@ -13,11 +12,11 @@ public class Protection implements Listener {
 	@EventHandler
 	public void onPlace(BlockPlaceEvent event) {
 		
-		if (event.getPlayer().getWorld().getName().equals("world")) {
+		if (event.getPlayer().getWorld().getName().equals("Spawn") && (!event.getPlayer().hasPermission("rustycore.owner") && (!event.getPlayer().hasPermission("rustycore.admin")))) {
 			
 			event.setCancelled(true);
 			
-			event.getPlayer().sendMessage(ChatColor.RED + "Sorry, but you can't place blocks here.");
+			event.getPlayer().sendMessage(ChatColor.RED + "Such wrong, much disapointment, wow.");
 			
 		}
 		
@@ -28,24 +27,11 @@ public class Protection implements Listener {
 		
 		Player player = (Player) event.getPlayer();
 		
-		if (player.getWorld().getName().equals("world")) {
+		if (player.getWorld().getName().equals("Spawn") && (!player.hasPermission("rustycore.owner") && (!player.hasPermission("rustycore.admin")))) {
 			
 			event.setCancelled(true);
 			
-			player.sendMessage(ChatColor.RED + "Sorry, but you can't break blocks here.");
-			
-		}
-		
-	}
-	
-	@EventHandler
-	public void onIgnite(BlockIgniteEvent event) {
-		
-		if (event.getPlayer().getWorld().getName().equals("world")) {
-			
-			event.setCancelled(true);
-			
-			event.getPlayer().sendMessage(ChatColor.RED + "Sorry, but you can't ignite blocks here.");
+			player.sendMessage(ChatColor.RED + "Such wrong, much disapointment, wow.");
 			
 		}
 		

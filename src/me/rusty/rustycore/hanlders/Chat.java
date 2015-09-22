@@ -1,10 +1,12 @@
 package me.rusty.rustycore.hanlders;
-
+	
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+
+
 
 public class Chat implements Listener {
 	
@@ -21,19 +23,15 @@ public class Chat implements Listener {
 		
 		else if (player.hasPermission("rustycore.mod")) {
 			
-			ChatColor.translateAlternateColorCodes('&', event.getMessage());
-			
-			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.YELLOW +
+			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.YELLOW + "" + ChatColor.BOLD + 
 					"MOD" + ChatColor.DARK_GRAY + "] " + ChatColor.GRAY + player.getName()
-					+ ": " + ChatColor.GRAY + "" + ChatColor.BOLD + event.getMessage());
+					+ ": " + ChatColor.GRAY + event.getMessage());
 			
 		}
 		
 		else if (player.hasPermission("rustycore.admin")) {
 			
-			ChatColor.translateAlternateColorCodes('&', event.getMessage());
-			
-			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.RED +
+			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.RED + "" + ChatColor.BOLD + 
 					"ADMIN" + ChatColor.DARK_GRAY + "] " + ChatColor.GRAY + player.getName()
 					+ ": " + ChatColor.WHITE + event.getMessage());
 			
@@ -41,11 +39,24 @@ public class Chat implements Listener {
 		
 		else if (player.hasPermission("rustycore.owner")) {
 			
-			ChatColor.translateAlternateColorCodes('&', event.getMessage());
-			
-			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA +
+			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA + "" + ChatColor.BOLD + 
 					"OWNER" + ChatColor.DARK_GRAY + "] " + ChatColor.GRAY + player.getName()
-					+ ": " + ChatColor.WHITE + "" + ChatColor.BOLD + event.getMessage());
+					+ ": " + ChatColor.WHITE + event.getMessage());
+			
+		}
+		
+		else if (player.hasPermission("rustycore.vip")) {
+			
+			event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.GREEN + "" + ChatColor.BOLD + 
+					"VIP" + ChatColor.DARK_GRAY + "] " + ChatColor.GRAY + player.getName()
+					+ ": " + ChatColor.GRAY + event.getMessage());
+			
+		}
+		
+		if (player.getWorld().getName().equals("HUB") && (!player.hasPermission("rustycore.staff"))) {
+			
+			event.setCancelled(true);
+			player.sendMessage(ChatColor.RED + "Sorry, but chat is disabled in spawn.");
 			
 		}
 		
