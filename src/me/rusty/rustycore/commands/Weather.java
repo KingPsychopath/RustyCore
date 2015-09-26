@@ -39,6 +39,12 @@ public class Weather implements CommandExecutor {
 				
 			}
 			
+			else if (!args[0].equalsIgnoreCase("rain") && (!args[0].equalsIgnoreCase("clear"))) {
+				
+				player.sendMessage(Core.prefix + ChatColor.GRAY + "Invalid Arguments, please try again.");
+				
+			}
+			
 		}
 		
 		else if (!player.hasPermission("rustycore.staff")) {

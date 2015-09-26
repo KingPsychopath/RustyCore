@@ -29,9 +29,29 @@ public class TP implements CommandExecutor {
 				
 				if (args[0].equals(Bukkit.getServer().getPlayer(args[0]))) {
 					
-					Player targetPlayer = (Player) player.getServer().getPlayer(args[0]);
+					Player targetPlayer = (Player) Bukkit.getServer().getPlayer(args[0]);
 					
-					player.teleport(targetPlayer);
+					if (targetPlayer.isOnline()) {
+					
+					player.teleport(targetPlayer.getLocation());
+					
+					player.sendMessage(Core.prefix + ChatColor.GRAY + "You are being teleported to " + args[0]);
+					
+					targetPlayer.sendMessage(ChatColor.RED + "WARNING: " + ChatColor.GRAY + player.getName() + " is teleporting to you.");
+					
+					}
+					
+					else if (!targetPlayer.isOnline()) {
+						
+						player.sendMessage(Core.prefix + ChatColor.GRAY + args[0] + " is not online.");
+						
+					}
+					
+				}
+				
+				else if (args.length > 1) {
+					
+					player.sendMessage(Core.prefix + ChatColor.GRAY + "Invalid arguments, please try again.");
 					
 				}
 			

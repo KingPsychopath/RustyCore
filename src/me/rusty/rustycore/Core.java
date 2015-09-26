@@ -8,7 +8,6 @@ import me.rusty.rustycore.commands.TP;
 import me.rusty.rustycore.commands.Time;
 import me.rusty.rustycore.commands.Weather;
 import me.rusty.rustycore.hanlders.Chat;
-import me.rusty.rustycore.hanlders.Fight;
 import me.rusty.rustycore.hanlders.Gamemode;
 import me.rusty.rustycore.hanlders.Join;
 import me.rusty.rustycore.hanlders.Kits;
@@ -25,8 +24,8 @@ public class Core extends JavaPlugin {
 	
 	public void onEnable() {
 		
-		initializeevents();
-		initializecommands();
+		initializeEvents();
+		initializeCommands();
 		
 	}
 	
@@ -46,7 +45,7 @@ public class Core extends JavaPlugin {
 		
 	}
 	
-	public void initializeevents() {
+	public void initializeEvents() {
 		
 		PluginManager pm = Bukkit.getServer().getPluginManager();
 		
@@ -54,12 +53,11 @@ public class Core extends JavaPlugin {
 		pm.registerEvents(new Chat(), this);
 		pm.registerEvents(new Join(), this);
 		pm.registerEvents(new MOTD(), this);
-		pm.registerEvents(new Fight(), this);
 		
 		
 	}
 	
-	public void initializecommands() {
+	public void initializeCommands() {
 		
 		getCommand("help").setExecutor(new Help());
 		getCommand("spawn").setExecutor(new Spawn());

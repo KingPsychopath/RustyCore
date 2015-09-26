@@ -1,8 +1,5 @@
 package me.rusty.rustycore.hanlders;
 
-import me.rusty.rustycore.Core;
-
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,10 +13,22 @@ public class Join implements Listener {
 		
 		Player player = (Player) event.getPlayer();
 		
-		player.teleport(Locations.spawn);
-
-		Bukkit.broadcastMessage(ChatColor.GRAY + "[+] " + player.getName());
-		player.sendMessage(Core.prefix + ChatColor.GRAY + "Spawn By: RustyDesigns and LethalDesigns");
+		
+		if (!player.hasPlayedBefore()) {
+			
+			player.teleport(Locations.spawn);
+			
+			event.setJoinMessage(ChatColor.DARK_GRAY + "[+] " + player.getName() + " has joined for the first time!");
+			
+		}
+		
+		else if (player.hasPlayedBefore()) {
+			
+			player.teleport(Locations.spawn);
+			
+			event.setJoinMessage(ChatColor.DARK_GRAY + "[+] " + player.getName());
+			
+		}
 		
 	}
 
