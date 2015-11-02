@@ -1,7 +1,5 @@
 package me.rusty.rustycore.commands;
 
-import me.rusty.rustycore.Core;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -21,21 +19,23 @@ public class TP implements CommandExecutor {
 			
 			if (args.length == 0) {
 				
-				player.sendMessage(Core.prefix + ChatColor.GRAY + "Please specify a player to be teleported to.");
+				player.sendMessage(ChatColor.GREEN
+						+ "Please specify a player to be teleported to.");
 				
 			}
 			
 			else if (args.length == 1) {
 				
-				if (args[0].equals(Bukkit.getServer().getPlayer(args[0]))) {
+				if (args[0].equalsIgnoreCase(Bukkit.getServer().getPlayer(args[0]).getName())) {
 					
-					Player targetPlayer = (Player) Bukkit.getServer().getPlayer(args[0]);
+					Player targetPlayer = Bukkit.getServer().getPlayer(args[0]);
 					
 					if (targetPlayer.isOnline()) {
 					
 					player.teleport(targetPlayer.getLocation());
 					
-					player.sendMessage(Core.prefix + ChatColor.GRAY + "You are being teleported to " + args[0]);
+						player.sendMessage(ChatColor.GREEN
+								+ "You are being teleported to " + args[0]);
 					
 					targetPlayer.sendMessage(ChatColor.RED + "WARNING: " + ChatColor.GRAY + player.getName() + " is teleporting to you.");
 					
@@ -43,7 +43,7 @@ public class TP implements CommandExecutor {
 					
 					else if (!targetPlayer.isOnline()) {
 						
-						player.sendMessage(Core.prefix + ChatColor.GRAY + args[0] + " is not online.");
+						player.sendMessage(ChatColor.GREEN + args[0] + " is not online.");
 						
 					}
 					
@@ -51,7 +51,7 @@ public class TP implements CommandExecutor {
 				
 				else if (args.length > 1) {
 					
-					player.sendMessage(Core.prefix + ChatColor.GRAY + "Invalid arguments, please try again.");
+					player.sendMessage(ChatColor.GREEN + "Invalid arguments, please try again.");
 					
 				}
 			
@@ -59,10 +59,12 @@ public class TP implements CommandExecutor {
 		
 		else if (!player.hasPermission("rustycore.staff")) {
 			
-			player.sendMessage(Core.prefix + ChatColor.GRAY + "You do not have permission to teleport to other players.");
+				player.sendMessage(ChatColor.GREEN
+						+ "You do not have permission to teleport to other players.");
 			
+			}
 		}
-	}
+		
 		return true;
-}
+	}
 }

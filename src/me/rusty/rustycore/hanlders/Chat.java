@@ -13,12 +13,18 @@ public class Chat implements Listener {
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent event) {
 		
-		Player player = (Player) event.getPlayer();
+		Player player = event.getPlayer();
 		
 		if (player.hasPermission("rustycore.member")) {
 			
 			event.setFormat(ChatColor.DARK_GRAY + player.getName() + ": " + ChatColor.GRAY + event.getMessage());
 			
+			if (player.getServer().getPort() == 25566) {
+
+				event.setCancelled(true);
+
+			}
+
 		}
 		
 		else if (player.hasPermission("rustycore.mod")) {

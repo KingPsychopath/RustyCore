@@ -3,7 +3,9 @@ package me.rusty.rustycore.commands;
 import me.rusty.rustycore.Core;
 import me.rusty.rustycore.hanlders.Locations;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,14 +22,34 @@ public class Spawn implements CommandExecutor {
 		
 		if (cmd.equalsIgnoreCase("spawn")) {
 			
-			player.sendMessage(Core.prefix + ChatColor.GRAY + "You will be teleported in 5 seconds.");
+			player.sendMessage(ChatColor.GREEN
+					+ "You will be teleported in 5 seconds.");
 			
 	        new BukkitRunnable() {
 	        	 
 	            @Override
 	            public void run() {
 	            
-	            	player.teleport(Locations.spawn);
+	    			if (Bukkit.getServer().getPort() == 25566) {
+	    				
+	    				player.teleport(Locations.hspawn);
+	    				player.setGameMode(GameMode.ADVENTURE);
+	    				
+	    			}
+	    			
+	    			if (Bukkit.getServer().getPort() == 25567) {
+	    				
+	    				player.teleport(Locations.fspawn);
+	    				player.setGameMode(GameMode.SURVIVAL);
+	    				
+	    			}
+	    			
+	    			if (Bukkit.getServer().getPort() == 25568) {
+	    				
+	    				player.teleport(Locations.cspawn);
+	    				player.setGameMode(GameMode.CREATIVE);
+	    				
+	    			}
 	            	
 	            }
 	 

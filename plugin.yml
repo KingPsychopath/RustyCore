@@ -1,6 +1,6 @@
- name: RustyCore
+ name: Rustic
  version: 1
- description: RustyCraft's Core Plugin
+ description: Rustic MC's Core Plugin
  author: RustyDesigns
  softdepend: []
  
@@ -9,36 +9,42 @@
  commands:
    help:
      description: Displays the help message!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
    spawn:
      description: Teleports you to spawn!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
    gm:
      description: Gamemode!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
    weather:
      description: Weather!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
    time:
      description: Time!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
    ci:
      description: Clear!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
    tp:
      description: TP!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
    kit:
      description: Kit!
-     usage: Syntax error! Simply type /command
-   ?:
-     description: Plugins!
-     usage: Syntax error! Simply type /command
-   pl:
-     description: Plugins!
-     usage: Syntax error! Simply type /command
-   plugins:
-     description: Plugins!
-     usage: Syntax error! Simply type /command
+     usage: Oops, please check your permissions and try again.
+   sethome:
+     description: SetHome!
+     usage: Oops, please check your permissions and try again.
+   home:
+     description: Home!
+     usage: Oops, please check your permissions and try again.
+   hub:
+     description: Teleport you to hub!
+     usage: Oops, please check your permissions and try again.
+   flyspeed:
+     description: Sets your flying speed!
+     usage: Oops, please check your permissions and try again.
+   hd:
+     description: Blocks Usage!
+     usage: Oops, please check your permissions and try again.
 
 

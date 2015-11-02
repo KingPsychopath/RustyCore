@@ -1,7 +1,6 @@
 package me.rusty.rustycore.commands;
 
-import me.rusty.rustycore.Core;
-
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,10 +14,39 @@ public class Help implements CommandExecutor {
 		
 		if (cmd.equalsIgnoreCase("help")) {
 			
-			sender.sendMessage(Core.prefix + ChatColor.GRAY + "Help");
-			sender.sendMessage(ChatColor.GRAY + "/help - this command.");
-			sender.sendMessage(ChatColor.GRAY + "/f - base command for factions.");
-			sender.sendMessage(ChatColor.GRAY + "/spawn - teleports you to spawn.");
+			if (Bukkit.getServer().getPort() == 25566) {
+				
+				sender.sendMessage(ChatColor.GREEN + "Help");
+				sender.sendMessage(ChatColor.GRAY + "/help - this command.");
+				sender.sendMessage(ChatColor.GRAY + "/hub - teleports you to the spawn.");
+				sender.sendMessage(ChatColor.GRAY + "/spawn - teleports you to spawn.");
+				
+				if (!cmd.equalsIgnoreCase("help")) {
+
+					if (sender.hasPermission("rustycore.staff")) {
+
+					}
+
+					if (!sender.hasPermission("rustycore.staff")) {
+
+						sender.sendMessage(ChatColor.RED
+								+ "Oops, please choose a server, then try again.");
+
+					}
+
+				}
+
+			}
+			
+			if (Bukkit.getServer().getPort() == 25567) {
+				
+				sender.sendMessage(ChatColor.GREEN + "Help");
+				sender.sendMessage(ChatColor.GRAY + "/help - this command.");
+				sender.sendMessage(ChatColor.GRAY + "/hub - teleports you to the hub server.");
+				sender.sendMessage(ChatColor.GRAY + "/f - base command for factions.");
+				sender.sendMessage(ChatColor.GRAY + "/spawn - teleports you to spawn.");
+				
+			}
 			
 		}
 		

@@ -1,7 +1,5 @@
 package me.rusty.rustycore.commands;
 
-import me.rusty.rustycore.Core;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -21,27 +19,31 @@ public class Weather implements CommandExecutor {
 			
 			if (args.length == 0) {
 				
-				player.sendMessage(Core.prefix + ChatColor.GRAY + "You must provide the type of weather.");
+				player.sendMessage(ChatColor.GREEN
+						+ "You must provide the type of weather.");
 				
 			}
 			
 			else if (args[0].equalsIgnoreCase("clear")) {
 				
 				Bukkit.getWorld(player.getWorld().getName()).setStorm(false);
-				player.sendMessage(Core.prefix + ChatColor.GRAY + "The weather has been set to: " + args[0]);
+				player.sendMessage(ChatColor.GREEN
+						+ "The weather has been set to: " + args[0]);
 					
 			}
 			
 			else if (args[0].equalsIgnoreCase("rain")) {
 				
 				Bukkit.getWorld(player.getWorld().getName()).setStorm(true);
-				player.sendMessage(Core.prefix + ChatColor.GRAY + "The weather has been set to: " + args[0]);
+				player.sendMessage(ChatColor.GREEN
+						+ "The weather has been set to: " + args[0]);
 				
 			}
 			
 			else if (!args[0].equalsIgnoreCase("rain") && (!args[0].equalsIgnoreCase("clear"))) {
 				
-				player.sendMessage(Core.prefix + ChatColor.GRAY + "Invalid Arguments, please try again.");
+				player.sendMessage(ChatColor.GREEN
+						+ "Invalid Arguments, please try again.");
 				
 			}
 			
@@ -49,7 +51,8 @@ public class Weather implements CommandExecutor {
 		
 		else if (!player.hasPermission("rustycore.staff")) {
 			
-			player.sendMessage(Core.prefix + ChatColor.GRAY + "You do not have permission to change the weather.");
+			player.sendMessage(ChatColor.GREEN
+					+ "You do not have permission to change the weather.");
 			
 		}
 		
